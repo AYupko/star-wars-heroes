@@ -1,5 +1,5 @@
 "use client";
-import { HeroCard } from "@/components/HeroCard";
+import { HeroCard } from "@/components/HeroCard/HeroCard";
 import useInfiniteScroll from "@/hooks/useInfiniteScroll";
 
 export default function Home() {
