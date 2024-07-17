@@ -10,15 +10,12 @@ const useHero = (id: string) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch hero data
         const heroData = await service.getHero(id);
         setHero(heroData);
   
-        // Fetch films data
         const allFilms = await service.getFilms(id);
         setFilms(allFilms);
   
-        // Fetch starships data if films are available
         if (allFilms.length > 0) {
           const filmsIds = allFilms.map(film => film.id);
           const allStarships = await service.getStarships(filmsIds, id);

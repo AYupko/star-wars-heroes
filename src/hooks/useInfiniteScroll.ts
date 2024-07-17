@@ -8,7 +8,6 @@ const useInfiniteScroll = () => {
   const [nextPageUrl, setNextPageUrl] = useState<string | null>('https://sw-api.starnavi.io/people/');
 
   useEffect(() => {
-    //to prevent fetching when data is over, if nextPageUrl is null, fetching won't proceed
     if (fetching && nextPageUrl) {
       const fetchHeroes = async () => {
         try {
@@ -22,7 +21,7 @@ const useInfiniteScroll = () => {
           setFetching(false);
         }
       };
-    
+      
       fetchHeroes();
     }
   }, [fetching]);
